@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Festival sminke 2024</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/logopo4.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Pocetna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ofestivalu">Festivali</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#organizatori">Organizatori</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                </ul>
+                <div class="center">
+                    <button onclick="openPopup()">Uloguj se</button>
+                </div>
+                <div class="popup" id="popup">
+                    <div class="close-btn" onclick="closePopup()">&times;</div>
+                    <div class="form">
+                        <h2>Log in</h2>
+                        <div class="form-element">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter password">
+                            </div>
+                            <div class="form-element">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Remember me</label>
+                
+                            </div>
+                            <div class="form-element">
+                                <button>Sign in</button>
+                
+                            </div>
+                            <div class="form-element">
+                                <a href="#">Forget password?</a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!--HERO-->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-uppercase text-white fw-semibold display-1">DOBRODOSLI NA FESTIVALE</h1>
+                    <h5 class="text-white mt-3 mb-4">Uzbuđenje počinje na festivalu!</h5>
+                    <div>
+                        <a href="#org" class="btn btn-brand me-2">Saznajte vise</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--ABOUT-->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">O nama</h1>
+                        <div class="line"></div>
+                        <p>Festival: gde se rađaju sećanja!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <img src="./images/lazaa.jpg" alt="">
+                </div>
+                <div class="col-lg-5">
+                    <h1>O festivalu Sminke</h1>
+                    <p class="mt-3 mb-4"></p>
+
+                    Festivali su živopisni događaji koji nas povezuju kroz umetnost, kulturu, muziku i zajedništvo. Ovi jedinstveni doživljaji okupljaju ljude iz različitih delova sveta, stvarajući atmosferu radosti, inspiracije i nezaboravnih trenutaka.<br>
+
+                    Naši festivali su mesto gde se susreću strasti i talenti, gde se umetnost i kreativnost proslavljaju u svim svojim oblicima. Ovde možete očekivati nezaboravne muzičke nastupe, spektakularne umetničke instalacije, filmske projekcije koje će vas ostaviti bez daha, ukusne gastronomske delicije, i mnogo više.<br>
+                    
+                    Osim što pružaju zabavu, naši festivali imaju i dublje značenje. Oni su prilika da se istražuju različite kulture, tradicije i perspektive, te da se grade mostovi između ljudi. Pored toga, mnogi od naših festivala posvećeni su podizanju svesti o važnim društvenim pitanjima i promociji održivog načina života.<br>
+                    
+                    Budite deo naše festivalske porodice i doživite nezaboravne trenutke koji će vas inspirisati i obogatiti vaš život. Pridružite nam se dok zajedno slavimo umetnost, kulturu i sve ono što nas čini jedinstvenima.<br>
+                    
+                    Dobrodošli u svet festivala - gde se avantura nikada ne završava!<br>
+                    </p>
+                    <div class="d-flex pt-4 mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-mail-send-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Mail</h5>
+                            <p>
+                                festivali@com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-user-5-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Rezervisi</h5>
+                            <p>Rezervisi svoje mesto</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="iconbox me-4">
+                            <i class="ri-rocket-2-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Drustvene mreze</h5>
+                            <p1>Instagram: festivali12 <br>
+                                Facebook: festtivali<br>
+                                Twitter: festivali223
+                            </p1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--SERVICES-->
+    <section id="org" class="section-padding border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Organizatori</h1>
+                        <div class="line"></div>
+                        <p>Nas tim - kreatori nezaboravnih doživljaja. Vaša strast, naša organizacija.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <!-- Prva kolona -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            
+                            <img src="https://i.imgur.com/OV15WM6.jpeg" alt="BeoAry Fest">
+                        </div>
+                        <a href="specifikacije-beofest.html">
+                            <h5 class="mt-4 mb-3">BeoArt Fest</h5>
+                        </a>
+                    </div>
+                    
+                    <p>adresa: Knez Mihailova 48, Beograd, 11000<br>
+                        godina osnivanja: 2015<br>
+                        kontakt telefon: 011/3042-568<br>
+                        email: kontakt@beoartfest.rs</p>
+                        
+                </div>
+            
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/jsFrKCn.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Etno Srbija</h5>
+                    </div>
+                    <p>adresa:Vojvode Stepe 321, Beograd, 11000<br>
+                        godina osnivanja": 2010<br>
+                        kontakt Telefon": 011/4223-690<br>
+                        email: info@etnosrbija.rs</p>
+                </div>
+            
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/NhAzBBF.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Lazarevac Fest</h5>
+                    </div>
+                    <p>
+                        adresa: Karađorđeva 12, Lazarevac, 11550<br>
+                        godina osnivanja: 2018<br>
+                        kontakt telefon: 014/7552-322<br>
+                        email: office@lazarevacmusicdays.rs<br>
+                    </p>
+                </div>
+            
+                <!-- Druga kolona -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/k4nEZm6.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Dunavski Horizonti</h5>
+                    </div>
+                    <p>
+                        
+      adresa: Zelena 22, Bečej, 21220 <br>
+      godina osnivanja: 2003 <br>
+      kontakt telefon: 021/880-304<br>
+      email: info@dunavskihorizonti.rs<br>
+                    </p>
+                </div>
+            
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/nmAOOHF.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Urban Beat</h5>
+                    </div>
+                    <p>
+                        
+      adresa: "Makedonska 30, Beograd, 11000<br>
+      godina osnivanja": 2012<br>
+      kontakt telefon": 011/4040-2020<br>
+      email: contact@urbanbeat.rs<br>
+                    </p>
+                </div>
+            
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/GXPCPrq.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Gari Fest</h5>
+                    </div>
+                    <p>
+                        adresa: Bulevar Oslobođenja 77, Novi Sad, 21000 <br>
+      godina osnivanja: 1998<br>
+      kontakt telefon: 021/422-455 <br>
+      email: jazzcarnival@ns.com<br>
+                    </p>
+                </div>
+
+            <!-- Treća kolona -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/LpxNm2V.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">EtnoFest Beograd</h5>
+                    </div>
+                    <p>
+                        adresa: Gavrila Principa 47, Beograd, 11000<br>
+      godina osnivanja: 2007<br>
+      kontakt telefon: 011/322-9087<br>
+      email: "kontakt@etnofestbgd.rs<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/koU4UuR.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Belgrade Urban Fest</h5>
+                    </div>
+                    <p>
+                        adresa: Topličin Venac 22, Beograd, 11000<br>
+      godina osnivanja: 2011<br>
+      kontakt telefon: 011/764-2002<br>
+      email: info@bufest.rs
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <img src="https://i.imgur.com/zUrrGam.jpeg" alt="Aura">
+                        </div>
+                        <h5 class="mt-4 mb-3">Niš Fest</h5>
+                    </div>
+                    <p>
+                        adresa: Obrenovićeva 20, Niš, 18000<br>
+      godina osnivanja: 1999<br>
+      kontakt telefon: 018/520-084<br>
+      email: office@nisvillejazzblues.rs<br>
+                    </p>
+                </div>
+
+            </div>
+
+            
+
+
+
+    </section>
+
+    <script>
+        document.querySelector("#show-login").addEventListener("click",function(){
+            document.querySelector(".popup").classList.add("active");
+        });
+        document.querySelector(".popup .close-btn").addEventListener("click",function(){
+            document.querySelector(".popup").classList.remove("active");
+        });
+    </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="jj.js"></script>
+</body>
+
+</html>
