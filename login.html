@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .login-container button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 20px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Korisničko ime" required>
+    <input type="password" id="password" placeholder="Lozinka" required>
+    <button onclick="login()">Prijavi se</button>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    const user = {
+      "korisnickoIme": "tijanat",
+      "lozinka": "novatijana321",
+      "ime": "Tijana",
+      "prezime": "Trifunović",
+      "email": "tijana.trifunovic@example.com",
+      "datumRodjenja": "1998-06-29",
+      "adresa": "Cara Dušana 8, Zrenjanin, 23000",
+      "telefon": "065321321",
+      "zanimanje": "Web developer"
+    };
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const message = document.getElementById('message');
+
+      if (username === user.korisnickoIme && password === user.lozinka) {
+        message.style.color = 'green';
+        message.textContent = `Dobrodošli, ${user.ime} ${user.prezime}!`;
+        // Preusmeravanje na drugu stranicu ili dodatne akcije
+        // window.location.href = 'dashboard.html'; // primer preusmeravanja
+      } else {
+        message.style.color = 'red';
+        message.textContent = 'Pogrešno korisničko ime ili lozinka.';
+      }
+    }
+  </script>
+</body>
+</html>
+
