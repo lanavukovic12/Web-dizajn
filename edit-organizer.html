@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izmena Organizatora Festivala</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Izmena Organizatora Festivala</h1>
+    <form id="organizerForm">
+        <div class="form-group">
+            <label for="naziv">Naziv:</label>
+            <input type="text" class="form-control" id="naziv" name="naziv">
+        </div>
+        <div class="form-group">
+            <label for="adresa">Adresa:</label>
+            <input type="text" class="form-control" id="adresa" name="adresa">
+        </div>
+        <div class="form-group">
+            <label for="godinaOsnivanja">Godina Osnivanja:</label>
+            <input type="text" class="form-control" id="godinaOsnivanja" name="godinaOsnivanja">
+        </div>
+        <div class="form-group">
+            <label for="logo">Logo URL:</label>
+            <input type="text" class="form-control" id="logo" name="logo">
+        </div>
+        <div class="form-group">
+            <label for="kontaktTelefon">Kontakt Telefon:</label>
+            <input type="text" class="form-control" id="kontaktTelefon" name="kontaktTelefon">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="festivali">Festivali:</label>
+            <textarea class="form-control" id="festivali" name="festivali" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Sačuvaj Izmenu</button>
+        <button type="button" class="btn btn-danger" onclick="deleteOrganizer()">Obriši Organizatora</button>
+    </form>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "your-api-key",
+        authDomain: "your-auth-domain",
+        databaseURL: "https://your-database-url.firebaseio.com",
+        projectId: "your-project-id",
+        storageBucket: "your-storage-bucket",
+        messagingSenderId: "your-messaging-sender-id",
+        appId: "your-app-id"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const dbRef = firebase.database().ref("organizatoriFestivala");
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const organizerId = urlParams.get('id');
+
+    dbRef.child(organizerId).once('value', (snapshot) => {
+        const organizer = snapshot.val();
+        document.getElementById('naziv').value = organizer.naziv;
+        document.getElementById('adresa').value = organizer.adresa;
+        document.getElementById('godinaOsnivanja').value = organizer.godinaOsnivanja;
+        document.getElementById('logo').value = organizer.logo;
+        document.getElementById('kontaktTelefon').value = organizer.kontaktTelefon;
+        document.getElementById('email').value = organizer.email;
+        document.getElementById('festivali').value = organizer.festivali;
+    });
+
+    document.getElementById('organizerForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const updatedOrganizer = {
+            naziv: document.getElementById('naziv').value,
+            adresa: document.getElementById('adresa').value,
+            godinaOsnivanja: document.getElementById('godinaOsnivanja').value,
+            logo: document.getElementById('logo').value,
+            kontaktTelefon: document.getElementById('kontaktTelefon').value,
+            email: document.getElementById('email').value,
+            festivali: document.getElementById('festivali').value
+        };
+
+        dbRef.child(organizerId).update(updatedOrganizer)
+            .then(() => {
+                alert('Podaci su uspešno izmenjeni.');
+            })
+            .catch(error => {
+                console.error('Greška prilikom izmene podataka:', error);
+            });
+    });
+
+    function deleteOrganizer() {
+        dbRef.child(organizerId).remove()
+            .then(() => {
+                alert('Organizator je uspešno obrisan.');
+                window.location.href = 'index.html'; // Povratak na glavnu stranicu
+            })
+            .catch(error => {
+                console.error('Greška prilikom brisanja organizatora:', error);
+            });
+    }
+</script>
+
+</body>
+</html>

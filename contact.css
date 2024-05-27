@@ -1,0 +1,89 @@
+.form {
+    padding: 20px 0;
+  }
+  
+  .form__title {
+    font-size: 20px;
+    color: var(--black-1);
+    font-weight: 600;
+  }
+  
+  .form__wrapper {
+    padding: 5px 0;
+  }
+  
+  .form__wrapper form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .form__group label {
+    font-size: 18px;
+    font-family: Poppins;
+    color: var(--black-1);
+    font-weight: 500;
+  }
+  
+  .form__group input,
+  .form__group textarea,
+  .form__group select {
+    width: 100%;
+    outline: 2px solid #237088;; /* Add blue border */
+    background-color: var(--lightGreen-1);
+    font-size: 14x;
+    font-family: Raleway;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 8px;
+    color: var(--white-2);
+  }
+  
+  .form__group textarea {
+    resize: vertical;
+  }
+  
+  .form__wrapper button[type='submit'] {
+    width: max-content;
+    border: none;
+    padding: 16px 64px;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .form__title {
+      font-size: 27px;
+    
+    }
+    
+    
+    .form__wrapper form {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .form__group__full {
+      grid-column: 1/3;
+    }
+  
+    .form__group label {
+      font-size: 20px;
+    }
+  
+    .form__group input,
+    .form__group textarea,
+    .form__group select {
+      width: 100%;
+      border: 1px solid #3498db; /* Add blue border */
+      background-color: #ffffff;
+      font-size: 20px;
+      font-family: Raleway;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 8px;
+      color: var(--black-2);
+    }
+  }
+  
